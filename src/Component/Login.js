@@ -36,15 +36,17 @@ function Login(props) {
         }else{
             setEmailError(true)
         }
-    }
 
+        setError(false)
+        
+    }
 
     
     const handlePasswordChange = (e) => {
 
         let name = e.target.name
         let value = e.target.value
-
+        
         setLoginDetails({ ...loginDetails, [name]: value })
 
         if (validator.isStrongPassword(loginDetails.password, {
@@ -52,16 +54,18 @@ function Login(props) {
             minUppercase: 1, minNumbers: 1, minSymbols: 1
           })) {
             setPasswordError(false)
+            setError(false)
           } else {
             setPasswordError(true)
+            
           }
-        
+          
+          setError(false)
     }
 
     const handleLogin = (e) => {
-        console.log(loginDetails)
 
-        if(state.userName === loginDetails.email && state.passWord === loginDetails.password){
+        if(state.userName === loginDetails.email.toLowerCase() && state.passWord === loginDetails.password){
             history.push("/tax-calculator")
         } else {
             setError(true)
