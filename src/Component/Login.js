@@ -143,8 +143,8 @@ function Login(props) {
                                 </button>
                                 {
                                     error ?
-                                        <div className="error">
-                                            <p> please enter details to login</p>
+                                        <div className="errorMessage">
+                                            <p> please enter all details to login</p>
                                         </div> : null
                                 }
 
