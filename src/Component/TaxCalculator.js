@@ -18,10 +18,10 @@ function TaxCalculator(props) {
         mediclaimPolicyPremium: ""
     })
 
-    const [rest, setRest] = React.useState(false)
+    const [reset, setReset] = React.useState(false)
     const [incomeDisplay, setIncomeDisplay] = React.useState(false)
     const [taxAmount, setTaxAmount] = React.useState(0)
-
+    const [error, setError] = React.useState(false)
 
     const handleChange = (e) => {
         let name = e.target.name
@@ -31,6 +31,7 @@ function TaxCalculator(props) {
     }
 
     React.useEffect(() => {
+
         if (taxDetails.basicSalary.length !== 0 ||
             taxDetails.leaveTravelAllowance.length !== 0 ||
             taxDetails.houseRentAllowance.length !== 0 ||
@@ -39,45 +40,59 @@ function TaxCalculator(props) {
             taxDetails.rentPaid.length !== 0 ||
             taxDetails.mediclaimPolicyPremium.length !== 0
         ) {
-            setRest(true)
+            setReset(true)
+        }else{
+            setReset(false)
         }
     }, [taxDetails])
 
     const handleCalculation = () => {
-        console.log(taxDetails)
+
         var applicableHRA;
-        if (taxDetails.typeOfCity === "metro") {
-            let applicableHRA1 = 0.5 * taxDetails.basicSalary
-            let applicableHRA2 = taxDetails.rentPaid - 0.1 * taxDetails.basicSalary
-            let applicableHRA3 = parseInt(taxDetails.houseRentAllowance)
+        if(
+            taxDetails.basicSalary.length === 0||
+            taxDetails.leaveTravelAllowance .length === 0||
+            taxDetails.houseRentAllowance.length === 0||
+            taxDetails.foodAllowance.length === 0||
+            taxDetails.investmentUnder80C.length === 0||
+            taxDetails.rentPaid.length === 0||
+            taxDetails.typeOfCity.length === 0||
+            taxDetails.mediclaimPolicyPremium.length === 0
+        ){
+                setError(true)
+        }else{
+            console.log(taxDetails)
+            if (taxDetails.typeOfCity === "metro") {
+                let applicableHRA1 = 0.5 * taxDetails.basicSalary
+                let applicableHRA2 = taxDetails.rentPaid - 0.1 * taxDetails.basicSalary
+                let applicableHRA3 = parseInt(taxDetails.houseRentAllowance)
+    
+                console.log(applicableHRA1, applicableHRA2, applicableHRA3)
+                applicableHRA = Math.min(applicableHRA1, applicableHRA2, applicableHRA3)
+            } else {
+                let applicableHRA1 = 0.4 * taxDetails.basicSalary
+                let applicableHRA2 = taxDetails.rentPaid - 0.1 * taxDetails.basicSalary
+                let applicableHRA3 = parseInt(taxDetails.houseRentAllowance)
+    
+                console.log(applicableHRA1, applicableHRA2, applicableHRA3)
+                applicableHRA = Math.min(applicableHRA1, applicableHRA2, applicableHRA3)
+            }
 
-            console.log(applicableHRA1, applicableHRA2, applicableHRA3)
-            applicableHRA = Math.min(applicableHRA1, applicableHRA2, applicableHRA3)
-        } else {
-            let applicableHRA1 = 0.4 * taxDetails.basicSalary
-            let applicableHRA2 = taxDetails.rentPaid - 0.1 * taxDetails.basicSalary
-            let applicableHRA3 = parseInt(taxDetails.houseRentAllowance)
-
-            console.log(applicableHRA1, applicableHRA2, applicableHRA3)
-            applicableHRA = Math.min(applicableHRA1, applicableHRA2, applicableHRA3)
+            let Bas = parseInt(taxDetails.basicSalary)
+            let LTA = parseInt(taxDetails.leaveTravelAllowance)
+            let HRA = parseInt(taxDetails.houseRentAllowance)
+            let FA = parseInt(taxDetails.foodAllowance)
+            let INV = parseInt(taxDetails.investmentUnder80C)
+            let MED = parseInt(taxDetails.mediclaimPolicyPremium)
+    
+            let taxableIncome = (Bas + LTA + HRA + FA) - applicableHRA - INV - MED
+    
+            console.log("taxable income", taxableIncome)
+    
+            setIncomeDisplay(true)
+            setTaxAmount(taxableIncome)
         }
-
-        console.log(applicableHRA)
-
-        let Bas = parseInt(taxDetails.basicSalary)
-        let LTA = parseInt(taxDetails.leaveTravelAllowance)
-        let HRA = parseInt(taxDetails.houseRentAllowance)
-        let FA = parseInt(taxDetails.foodAllowance)
-        let INV = parseInt(taxDetails.investmentUnder80C)
-        let MED = parseInt(taxDetails.mediclaimPolicyPremium)
-
-        let taxableIncome = (Bas + LTA + HRA + FA) - applicableHRA - INV - MED
-
-        console.log("taxable income", taxableIncome)
-
-        setIncomeDisplay(true)
-        setTaxAmount(taxableIncome)
-
+       
     }
 
     const handleReset = () => {
@@ -112,6 +127,12 @@ function TaxCalculator(props) {
                             </Col>
                         </Row> */}
                         <Card className="shadow p-3 mb-5 bg-white rounded ">
+                                {
+                                    error ?
+                                        <div className="error">
+                                            <p> Please enter all details</p>
+                                        </div> : null
+                                }
                             {/* <Card.Header as="h5">
                                 <Row>
                                     <Col xs={12} md={12}>
@@ -260,9 +281,16 @@ function TaxCalculator(props) {
                                             Calculate
                                         </Button>
 
-                                        <Button variant="primary" type="submit" onClick={handleReset}>
+                                        {
+                                            reset?
+                                            <Button variant="primary" type="submit" onClick={handleReset}>
                                             Reset
-                                        </Button>
+                                             </Button>
+                                        :
+                                        null
+                                        }
+
+                                        
 
                                         {/* {
                                         rest?console.log(rest,"true"):(console.log(rest,"false"))

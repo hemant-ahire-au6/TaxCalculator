@@ -4,7 +4,6 @@ import {useHistory} from "react-router-dom"
 
 function NavBar(props) {
     const history = useHistory()
-    console.log(props)
 
     const handleRouteChange = ()=>{
         history.push("/")
