@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from './Component/Login';
 import TaxCalculator from './Component/TaxCalculator';
-import NavBar from './Component/NavBar';
 
 function App(props) {
   return (

@@ -51,7 +51,7 @@ function TaxCalculator(props) {
         var applicableHRA;
         if(
             taxDetails.basicSalary.length === 0||
-            taxDetails.leaveTravelAllowance .length === 0||
+            taxDetails.leaveTravelAllowance.length === 0||
             taxDetails.houseRentAllowance.length === 0||
             taxDetails.foodAllowance.length === 0||
             taxDetails.investmentUnder80C.length === 0||

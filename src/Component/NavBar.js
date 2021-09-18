@@ -16,7 +16,7 @@ function NavBar(props) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     {
-                        props.match.path == "/" ?
+                        props.match.path === "/" ?
                             null
                             :
                             <Button variant="primary" type="submit" onClick={handleRouteChange}>
