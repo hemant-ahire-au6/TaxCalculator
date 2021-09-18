@@ -126,7 +126,7 @@ function TaxCalculator(props) {
                                 <h1 > Tax Calculator</h1>
                             </Col>
                         </Row> */}
-                        <Card className="shadow p-3 mb-5 bg-white rounded ">
+                        <Card className="shadow p-3 mb-1 bg-white rounded inputCard">
                                 {
                                     error ?
                                         <div className="error">
@@ -144,7 +144,7 @@ function TaxCalculator(props) {
                                 <Row>
                                     <Col xs={12} md={6} >
                                         <Form>
-                                            <Form.Group className="mb-4" controlId="formBasicEmail">
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label className="form-lable">Basic Salary</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -159,7 +159,7 @@ function TaxCalculator(props) {
                                                 </Form.Text> */}
                                             </Form.Group>
 
-                                            <Form.Group className="mb-4" controlId="formBasicPassword">
+                                            <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Label className="form-lable">House Rent Allowance(HRA)</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -171,7 +171,7 @@ function TaxCalculator(props) {
                                                 />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-4" controlId="formBasicEmail">
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label className="form-lable">Investments under section 80C</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -186,7 +186,7 @@ function TaxCalculator(props) {
                                                 </Form.Text> */}
                                             </Form.Group>
 
-                                            <Form.Group className="mb-1" controlId="formBasicPassword">
+                                            <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Label className="form-lable">Type of city</Form.Label>
                                                 <Form.Select
                                                     aria-label="Default select example"
@@ -210,7 +210,7 @@ function TaxCalculator(props) {
 
                                     <Col xs={12} md={6} >
                                         <Form>
-                                            <Form.Group className="mb-4" controlId="formBasicEmail">
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label className="form-lable">Leave Travel Allowance</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -225,7 +225,7 @@ function TaxCalculator(props) {
                                           </Form.Text> */}
                                             </Form.Group>
 
-                                            <Form.Group className="mb-4" controlId="formBasicPassword">
+                                            <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Label className="form-lable">Food Allowance</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -237,7 +237,7 @@ function TaxCalculator(props) {
                                                 />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-4" controlId="formBasicEmail">
+                                            <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label className="form-lable">Rent paid</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
@@ -252,7 +252,7 @@ function TaxCalculator(props) {
                                             </Form.Text> */}
                                             </Form.Group>
 
-                                            <Form.Group className="mb-1" controlId="formBasicPassword">
+                                            <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Label className="form-lable">Mediclaim policy premium</Form.Label>
                                                 <Form.Control
                                                     className="form-input"

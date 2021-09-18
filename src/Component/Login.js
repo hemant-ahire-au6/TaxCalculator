@@ -1,9 +1,11 @@
-import React from 'react'
-import { Container, Row, Col } from "react-bootstrap"
-import LoginImage from "../Asset/gst-calculator.png"
-import LogoImage from "../Asset/logo.jpg"
-import { useHistory } from "react-router-dom"
-import NavBar from './NavBar'
+import React from 'react';
+import { Container, Row, Col } from "react-bootstrap";
+import LoginImage from "../Asset/gst-calculator.png";
+import LogoImage from "../Asset/logo.jpg";
+import { useHistory } from "react-router-dom";
+import NavBar from './NavBar';
+import Typist from 'react-typist';
+import Typed from 'react-typed';
 
 function Login(props) {
     console.log(props)
@@ -35,12 +37,29 @@ function Login(props) {
 
     return (
         <>
-            <NavBar {...props}/>
+            <NavBar {...props} />
             <Container fluid>
 
                 <Row className="login-row">
                     <Col xs={12} md={6} className="image-col">
-                        <img src={LoginImage} className="login-image" alt="logo" />
+
+                        <Typed
+                        className="animation"
+                        strings={['Learn Finance',"Learn tax","Learn Insurance","Your Destination for finacial needs"]}
+                        typeSpeed={40}
+                        backSpeed={50}
+                        loop
+                        />
+                        {/* <img src={LoginImage} className="login-image" alt="logo" /> */} 
+                    </Col>
+                    <Col className="mobile-col-1">
+                    <Typed
+                        className="animation1"
+                        strings={['Learn Finance',"Learn tax","Learn Insurance","Your Destination for finacial needs"]}
+                        typeSpeed={40}
+                        backSpeed={50}
+                        loop
+                        />
                     </Col>
 
                     <Col xs={12} md={6} className="login-column">
