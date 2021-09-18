@@ -5,16 +5,19 @@ import { useHistory } from "react-router-dom";
 import NavBar from './NavBar';
 import Typed from 'react-typed';
 import validator from 'validator';
+import{useSelector} from "react-redux"
 
 function Login(props) {
-    console.log(props)
-
+    
+    const state = useSelector(state => state)
+  
     const history = useHistory()
 
     const [loginDetails, setLoginDetails] = React.useState({
         email: "",
         password: ""
     })
+
 
     const [error, setError] = React.useState(false)
     const [emailError, setEmailError] = React.useState(false)
@@ -57,11 +60,15 @@ function Login(props) {
 
     const handleLogin = (e) => {
         console.log(loginDetails)
-        if (loginDetails.email.length !== 0 && loginDetails.password.length !== 0) {
+
+        if(state.userName === loginDetails.email && state.passWord === loginDetails.password){
             history.push("/tax-calculator")
         } else {
             setError(true)
         }
+        // if (loginDetails.email.length !== 0 && loginDetails.password.length !== 0) {
+        //     history.push("/tax-calculator")
+        // }
     }
 
     return (
@@ -144,7 +151,7 @@ function Login(props) {
                                 {
                                     error ?
                                         <div className="errorMessage">
-                                            <p> please enter all details to login</p>
+                                            <p>You are not authorized to enter</p>
                                         </div> : null
                                 }
 
