@@ -1,10 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import LoginImage from "../Asset/gst-calculator.png";
 import LogoImage from "../Asset/logo.jpg";
 import { useHistory } from "react-router-dom";
 import NavBar from './NavBar';
-import Typist from 'react-typist';
 import Typed from 'react-typed';
 
 function Login(props) {
