@@ -61,7 +61,7 @@ function TaxCalculator(props) {
         ){
                 setError(true)
         }else{
-            console.log(taxDetails)
+            setError(false)
             if (taxDetails.typeOfCity === "metro") {
                 let applicableHRA1 = 0.5 * taxDetails.basicSalary
                 let applicableHRA2 = taxDetails.rentPaid - 0.1 * taxDetails.basicSalary
