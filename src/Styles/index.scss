@@ -267,3 +267,15 @@ input::-webkit-inner-spin-button {
     font-size: 30px;
     color: rgb(170, 73, 73);
 }
+
+.errorMessage{
+    margin-bottom: 5px !important;
+    color: rgb(255, 35, 35);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+.errorMessage p {
+    margin: 0px;
+    letter-spacing: 1px;
+}

@@ -255,4 +255,17 @@ input::-webkit-inner-spin-button {
   letter-spacing: 2px;
   font-size: 30px;
   color: #aa4949;
+}
+
+.errorMessage {
+  margin-bottom: 5px !important;
+  color: #ff2323;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.errorMessage p {
+  margin: 0px;
+  letter-spacing: 1px;
 }/*# sourceMappingURL=index.css.map */
