@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #555;
+  background-color: #ffffff;
+}
+
+.login-column {
+  display: flex;
+  justify-content: center;
+}
+
+.login-div {
+  width: 430px;
+  height: 600px;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 40px;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.login-image {
+  align-items: center;
+  margin: auto;
+  margin-top: 100px;
+  width: 500px;
+  height: 70vh;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaaf, -8px -8px 15px #fff;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding-top: 24px;
+  letter-spacing: 0.5px;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 7px;
+  letter-spacing: 3px;
+}
+
+.fields {
+  width: 100%;
+  padding: 30px 5px 5px 5px;
+}
+
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  padding: 20px 10px 20px 5px;
+  width: 100%;
+}
+
+.userName, .password {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.fields svg {
+  height: 22px;
+  margin: 0 0px -3px 25px;
+}
+
+.signin-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  text-align: center;
+  background-color: #1c46d1;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
+  transition: all 0.5s;
+}
+
+.signin-button:hover {
+  background-color: #02c8db;
+}
+
+.signin-button:active {
+  background-color: #7484bb;
+}
+
+.title-col {
+  margin: 20px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.title-col h1 {
+  letter-spacing: 3px;
+}
+
+.form-input input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.image-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (max-width: 500px) {
+  .calculation {
+    display: none;
+  }
+
+  .image-col {
+    display: none;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  .fields {
+    width: 100%;
+    padding: 40px 5px 5px 5px;
+  }
+
+  .login-column {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+.error {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.error p {
+  color: red;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.darkNavbar {
+  background-color: #ecf0f3 !important;
+  height: 70px;
+}
+
+.navbar-logo {
+  font-weight: 900;
+  letter-spacing: 5px;
+  font-size: 30px !important;
+}
+
+.taxable-income {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.calculation {
+  width: 70%;
+}
+
+.input-col {
+  padding: 30px;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.main-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-row {
+  padding: 0px 20px 0px 20px;
+}
+
+.form-lable {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.taxable-income h1 {
+  letter-spacing: 1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.taxable-income p {
+  letter-spacing: 1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}/*# sourceMappingURL=index.css.map */
