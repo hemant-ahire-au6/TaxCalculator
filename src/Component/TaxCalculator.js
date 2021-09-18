@@ -172,7 +172,7 @@ function TaxCalculator(props) {
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label className="form-lable">Investments under section 80C</Form.Label>
+                                                <Form.Label className="form-lable">Investments under 80C</Form.Label>
                                                 <Form.Control
                                                     className="form-input"
                                                     type="number"
